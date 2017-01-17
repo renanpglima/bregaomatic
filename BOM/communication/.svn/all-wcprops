@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/83/trunk/BOM/communication
+END
+IServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/83/trunk/BOM/communication/IServer.java
+END
+ClientCommunicationManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/83/trunk/BOM/communication/ClientCommunicationManager.java
+END
+ClientCommunicationManager_Stub.class
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/83/trunk/BOM/communication/ClientCommunicationManager_Stub.class
+END
+IClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/77/trunk/BOM/communication/IClient.java
+END
+ServerCommunicationManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/83/trunk/BOM/communication/ServerCommunicationManager.java
+END
+ServerCommunicationManager_Stub.class
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/83/trunk/BOM/communication/ServerCommunicationManager_Stub.class
+END
+ICommunicationManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/75/trunk/BOM/communication/ICommunicationManager.java
+END
+LocalCommunicationManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/75/trunk/BOM/communication/LocalCommunicationManager.java
+END

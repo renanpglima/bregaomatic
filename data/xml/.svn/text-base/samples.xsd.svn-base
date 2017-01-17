@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="samples">
+    <xs:complexType>
+        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="track">
+                <xs:complexType>
+                    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                       <xs:element name="midiFile">
+                           <xs:complexType>
+                               <xs:attribute name="fileName" type="xs:string" use="required"/>
+                               <xs:attribute name="solo" type="xs:boolean" use="required"/>
+                               <xs:attribute name="tiles" type="xs:int" use="required"/>
+                           </xs:complexType>
+                       </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="instrument" type="xs:string" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>

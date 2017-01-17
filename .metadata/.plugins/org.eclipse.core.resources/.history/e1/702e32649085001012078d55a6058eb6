@@ -1,0 +1,232 @@
+package gui;
+
+import java.awt.Component;
+import java.awt.Cursor;
+import java.awt.Graphics;
+import java.awt.GridBagLayout;
+import java.awt.Rectangle;
+import java.rmi.RemoteException;
+
+import javax.swing.DefaultButtonModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import messages.EUIMessageType;
+import messages.Message;
+import messages.UIMessage;
+
+import communication.ClientCommunicationManager;
+import communication.ServerCommunicationManager;
+
+
+@SuppressWarnings("serial")
+public class FMain extends JFrame {
+
+	private JPanel jContentPane = null;
+	private TracksPanel tracksPanel;
+	private AnimationPanel animationPanel;
+	private JLabel backgroundLabel = null;
+	public JButton playBtn = null;
+	
+	public boolean isInitialized = false;
+	
+	public boolean isPaused = true;
+	
+	private int userId;
+
+	/**
+	 * This is the default constructor
+	 */
+	public FMain(int userId) {
+		super();
+		initialize();
+		this.userId = userId;
+		this.tracksPanel.parentFrame = this;
+	}
+
+	/**
+	 * This method initializes this
+	 * 
+	 * @return void
+	 */
+	private void initialize() {
+		this.isInitialized = true;
+		this.setContentPane(getJContentPane());
+		this.setTitle("Brega-o-matic");
+		this.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setResizable(false);
+		this.setBounds(new Rectangle(0, 0, 800, 600));
+		this.addWindowListener(new java.awt.event.WindowAdapter() {   
+			public void windowClosing(java.awt.event.WindowEvent e) {    
+				System.exit(0);
+			}   
+			public void windowClosed(java.awt.event.WindowEvent e) {    
+				System.exit(0);
+			}   
+			public void windowActivated(java.awt.event.WindowEvent e) {    
+				repaint();
+			}
+			public void windowDeiconified(java.awt.event.WindowEvent e) {
+				repaint();
+			}
+		});
+	}
+
+	/**
+	 * This method initializes jContentPane
+	 * 
+	 * @return javax.swing.JPanel
+	 */
+	private JPanel getJContentPane() {
+		if (jContentPane == null) {
+			backgroundLabel = new JLabel();
+			backgroundLabel.setBounds(new Rectangle(0, 0, 800, 600));
+			backgroundLabel.setIcon(new ImageIcon(getClass().getResource("/gui/images/mainScreen.png")));
+			jContentPane = new JPanel();
+			jContentPane.setLayout(null);
+			jContentPane.add(getPlayBtn(), null);
+			jContentPane.add(backgroundLabel, null);
+			jContentPane.add(getTracksPanel(), null);
+			jContentPane.add(getAnimationPanel(), null);
+			
+		}
+		return jContentPane;
+	}
+
+	private Component getTracksPanel() {
+		if (tracksPanel == null) {
+			tracksPanel = new TracksPanel();
+			tracksPanel.setLayout(new GridBagLayout());
+			tracksPanel.setBounds(new Rectangle(0, 138, 800, 211));
+		}
+		return tracksPanel;
+	}
+	
+	private Component getAnimationPanel() {
+		if (animationPanel == null) {
+			animationPanel = new AnimationPanel();
+			animationPanel.setLayout(new GridBagLayout());
+			animationPanel.setBounds(new Rectangle(0, 349, 800, 220));
+		}
+		return animationPanel;
+	}
+
+
+	/**
+	 * This method initializes playBtn	
+	 * 	
+	 * @return javax.swing.JButton	
+	 */
+	private JButton getPlayBtn() {
+		if (playBtn == null) {
+			DefaultButtonModel defaultButtonModel = new DefaultButtonModel();
+			defaultButtonModel.setArmed(false);
+			defaultButtonModel.setSelected(false);
+			playBtn = new JButton();
+			playBtn.setIcon(new ImageIcon(getClass().getResource("/gui/images/btnPlay.png")));
+			playBtn.setPressedIcon(new ImageIcon(getClass().getResource("/gui/images/btnPlayClick.png")));
+			playBtn.setBorderPainted(false);
+			playBtn.setOpaque(false);
+			playBtn.setFocusPainted(false);
+			playBtn.setRequestFocusEnabled(true);
+			playBtn.setContentAreaFilled(false);
+			playBtn.setSelected(false);
+			playBtn.setBounds(new Rectangle(710, 213, 70, 70));
+			playBtn.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					FMain.this.isPaused = !FMain.this.isPaused;
+					FMain.this.setButtonImage();
+					FMain.this.pausePlayAction();
+				}
+			});
+		}
+		return playBtn;
+	}
+	
+	protected void pausePlayAction() {
+		if (isPaused){
+			Message m = new UIMessage(userId, EUIMessageType.STOP, null);
+			try {
+				CommunicationHandler.getInstance().getCommunicationManager().send(m);
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else{
+			Message m = new UIMessage(userId, EUIMessageType.PLAY, null);
+			try {
+				CommunicationHandler.getInstance().getCommunicationManager().send(m);
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	protected void setButtonImage() {
+		if (isPaused){
+			playBtn.setIcon(new ImageIcon(getClass().getResource("/gui/images/btnPlay.png")));
+			playBtn.setPressedIcon(new ImageIcon(getClass().getResource("/gui/images/btnPlayClick.png")));
+		}
+		else{
+			playBtn.setIcon(new ImageIcon(getClass().getResource("/gui/images/btnStop.png")));
+			playBtn.setPressedIcon(new ImageIcon(getClass().getResource("/gui/images/btnStopClick.png")));
+		}
+		this.repaint();
+	}
+	
+	public void paint(Graphics graphic) {
+		backgroundLabel.paint(backgroundLabel.getGraphics());
+		animationPanel.paint(animationPanel.getGraphics());
+		playBtn.paint(playBtn.getGraphics());
+		
+		tracksPanel.paint(tracksPanel.getGraphics());
+	}
+
+	public static void main(String[] args) {
+		int userId = 0;
+		FMain frame = new FMain(userId);
+		frame.setLocationRelativeTo(null);		
+		frame.setVisible(true);	
+		
+		ClientCommunicationManager client2;
+		try {
+			client2 = new ClientCommunicationManager("localhost");
+			CommunicationHandler.getInstance().setCommunicationManager(client2);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+	
+		
+		if (args != null && args.length > 0) {
+			int type = Integer.parseInt(args[0]);
+			switch(type)
+			{
+			case  0:
+				ServerCommunicationManager server;
+				try {
+					server = new ServerCommunicationManager();
+					CommunicationHandler.getInstance().setCommunicationManager(server);
+				} catch (RemoteException e) {
+					e.printStackTrace();
+				}
+				break;
+			case 1:
+				ClientCommunicationManager client;
+					try {
+						client = new ClientCommunicationManager("localhost");
+						CommunicationHandler.getInstance().setCommunicationManager(client);
+					} catch (RemoteException e) {
+						e.printStackTrace();
+					}
+				
+				break;
+			}
+		}
+	}
+
+}  //  @jve:decl-index=0:visual-constraint="10,10"

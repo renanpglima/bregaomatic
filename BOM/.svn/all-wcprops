@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/102/trunk/BOM
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/86/trunk/BOM/.classpath
+END
+bregaOmatic.bat
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/88/trunk/BOM/bregaOmatic.bat
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/83/trunk/BOM/.project
+END
+RMIRegistryInit.bat
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/88/trunk/BOM/RMIRegistryInit.bat
+END
+stubGen.bat
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/88/trunk/BOM/stubGen.bat
+END

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<samples xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/Temp/memf/pi/BOMSVN/data/samples.xsd">
+
+    <track instrument="keyboard">
+        <midiFile fileName="\\..\\data\\midi\\teclado\teclado1.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\teclado\teclado2.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\teclado\teclado3.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\teclado\teclado4.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\teclado\teclado5.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\teclado\teclado6.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\teclado\teclado7.mid" solo="false" tiles="4"/>
+    </track>
+    
+     <track instrument="guitar">
+        <midiFile fileName="\\..\\data\\midi\\guitarra\\guitarraBase1.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\guitarra\\guitarraBase2.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\guitarra\\guitarraBase3.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\guitarra\\guitarraBase4.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\guitarra\\guitarraDedilhado1.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\guitarra\\guitarraDedilhado2.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\guitarra\\guitarraDedilhado3.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\guitarra\\guitarraSolo1.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\guitarra\\guitarraSolo2.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\guitarra\\guitarraSolo3.mid" solo="false" tiles="4"/>
+    </track>
+    
+    <track instrument="drums">
+        <midiFile fileName="\\..\\data\\midi\\bateria\bateria0.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\bateria\bateria1.mid" solo="false" tiles="4"/>    
+        <midiFile fileName="\\..\\data\\midi\\bateria\bateria2.mid" solo="false" tiles="4"/>     
+        <midiFile fileName="\\..\\data\\midi\\bateria\bateria3.mid" solo="false" tiles="4"/>    
+        <midiFile fileName="\\..\\data\\midi\\bateria\bateria4.mid" solo="false" tiles="4"/>     
+        <midiFile fileName="\\..\\data\\midi\\bateria\bateria5.mid" solo="false" tiles="4"/>    
+        <midiFile fileName="\\..\\data\\midi\\bateria\bateria6.mid" solo="false" tiles="4"/>     
+        <midiFile fileName="\\..\\data\\midi\\bateria\bateria7.mid" solo="false" tiles="4"/>             
+
+	</track>
+
+    <track instrument="bass">
+        <midiFile fileName="\\..\\data\\midi\\baixo\\baixo0.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\baixo\\baixo1.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\baixo\\baixo2.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\baixo\\baixo3.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\baixo\\baixo4.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\baixo\\baixo5.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\baixo\\baixo6.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\baixo\\baixo7.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\baixo\\baixo8.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\baixo\\baixo9.mid" solo="false" tiles="4"/>
+    </track>
+
+    <track instrument="metal">
+        <midiFile fileName="\\..\\data\\midi\\metais\\metal1.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\metais\\metal2.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\metais\\metal3.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\metais\\metal4.mid" solo="false" tiles="4"/>
+    </track>
+
+    <track instrument="fx">
+        <midiFile fileName="\\..\\data\\midi\\fx\\fx1.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\fx\\fx2.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\fx\\fx3.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\fx\\fx5.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\fx\\fx6.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\fx\\fx7.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\fx\\fx8.mid" solo="false" tiles="4"/>
+        <midiFile fileName="\\..\\data\\midi\\fx\\fx9.mid" solo="false" tiles="4"/>
+    </track>
+
+</samples>
